@@ -1,1 +1,9 @@
 # Python_Assignment-VRV
+# Log Analysis Script
+
+This Python script analyzes web server log files to extract and display key insights. It processes logs to compute the number of requests per IP address, identify the most frequently accessed endpoint, and detect suspicious activity such as potential brute force login attempts. The results are displayed in the terminal and saved to a structured CSV file. The script includes several features: it counts the number of requests made by each IP address and displays the results in descending order; identifies the most frequently accessed endpoint, providing its name and access count; detects suspicious activity by flagging IP addresses with failed login attempts exceeding a configurable threshold (default: 10); and saves the analysis results to a CSV file named `log_analysis_results.csv`, which includes requests per IP, the most accessed endpoint, and details of suspicious activity. 
+
+To use this script, you will need Python 3.7 or later and the standard libraries `collections`, `csv`, and `re`. First, save the script as `log_analysis_script.py` and create a log file named `sample.log` containing the provided sample data or your own logs. Then, run the script in a terminal with the command `python log_analysis_script.py`. The results will be displayed in the terminal, and a CSV file will be created in the same directory. 
+
+A sample log file should look like this:
+`192.168.1.1 - - [03/Dec/2024:10:12:34 +0000] "GET /home HTTP/1.1" 200 512`. This is an example of the format the script processes. Once run, the script will display results like IP request counts (e.g., `192.168.1.1 - 6 requests`), the most frequently accessed endpoint (e.g., `/home accessed 5 times`), and details about suspicious activity (e.g., `203.0.113.5 - 9 failed login attempts`). The results are also saved in the CSV file for further analysis.
